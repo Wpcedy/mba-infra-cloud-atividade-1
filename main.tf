@@ -104,12 +104,12 @@ resource "azurerm_virtual_machine" "vm_application" {
   location              = azurerm_resource_group.rg_application.location
   resource_group_name   = azurerm_resource_group.rg_application.name
   network_interface_ids = [azurerm_network_interface.nic_application.id]
-  vm_size               = "Standard_DS1_v2"
+  vm_size               = "Standard_DC2s_v3"
 
   storage_image_reference { //Imagem da maquina
     publisher = "Canonical"
     offer     = "UbuntuServer"
-    sku       = "16.04-LTS"
+    sku       = "16_04-lts-gen2"
     version   = "latest"
   }
   storage_os_disk {
